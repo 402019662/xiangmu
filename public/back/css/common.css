@@ -1,4 +1,12 @@
 @charset "UTF-8";
 .login_bg {
-    background-color: 
+    background-color:#222d32; 
+}
+.mt_150{
+    /* mt150 */
+   margin-top: 150px;
+}
+.panel h4{
+    /* 文字居中 */
+    text-align: center;
 }
