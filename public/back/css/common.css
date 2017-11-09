@@ -1,4 +1,19 @@
 @charset "UTF-8";
+html,body{
+    height: 100%;
+}
+a{
+    text-decoration: none;
+}
+a:link , a:visited ,a:hover .a:active{
+    text-decoration: none;
+}
+/* bootstrap有默认的padding 值 */
+*{padding: 0px;
+margin: 0px;
+list-style: none;}
+
+
 .login_bg {
     background-color:#222d32; 
 }
@@ -9,4 +24,55 @@
 .panel h4{
     /* 文字居中 */
     text-align: center;
+}
+/* 为什么没高度因为高度跟父盒子一样高 ，就给父盒子一个高*/
+.left{
+    width: 180px;
+    height: 100%;
+    background-color: #222d32;
+}
+/* 子元素把父盒子张开 */
+.title a{
+    font-size: 18px;
+    display: block;
+    width: 180px;
+    height: 50px;
+    background-color: #367fa9;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+}
+.left .userName{
+    height: 150px;
+    width: 180px;
+}
+.left .userName img{
+    height:80px;
+    width:  80px;
+    border-radius: 50%;
+    display: block;
+    margin: 30px auto 0px ;
+}
+.left .userName p{
+    color: #fff;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+}
+.left .nav a{
+    color: #fff;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 30px;
+    display: block;
+    border: 3px solid transparent; 
+}
+.left .nav a.now{
+    border-left-color: yellow;
+    background-color: #1d1f21;
+    color:#fff;
+}
+.left .nav .child a{
+    padding-left: 50px;
 }
