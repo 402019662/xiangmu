@@ -7,6 +7,7 @@
     <title>系统管理登入</title>
     <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./lib/bootstrap/bootstrap-validator/css/bootstrapValidator.css">
 </head>
 <body class="login_bg">
     <div class="container">
@@ -22,13 +23,13 @@
                                     <div class="form-group">
                                       <label for="username" class="col-sm-3 control-label">用户名</label>
                                       <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="username" placeholder="请输入你的用户名">
+                                        <input type="text" name="username" class="form-control" autocomplete="off" id="username" placeholder="请输入你的用户名">
                                       </div>
                                     </div>
                                     <div class="form-group">
                                       <label for="password" class="col-sm-3 control-label">密码</label>
                                       <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="password" placeholder="请输入你的密码">
+                                        <input type="password" name="password" class="form-control" autocomplete="off" id="password" placeholder="请输入你的密码">
                                       </div>
                                     </div>
                                     <div class="form-group">
@@ -47,6 +48,8 @@
 
 <script src="./lib/jauery/jquery.min.js"></script>
 <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="./lib//bootstrap/bootstrap-validator/js/bootstrapValidator.min.js"></script>
 <script src="./js/common.js"></script>
+<script src="./js/login.js"></script>
 </body>
 </html>
