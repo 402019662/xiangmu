@@ -26,10 +26,14 @@ list-style: none;}
     text-align: center;
 }
 /* 为什么没高度因为高度跟父盒子一样高 ，就给父盒子一个高*/
+/* 这里不能用float如果使用那么路径导航的父盒子的类名不能实现 */
 .left{
     width: 180px;
     height: 100%;
     background-color: #222d32;
+    position: absolute;
+    /* float: left; */
+
 }
 /* 子元素把父盒子张开 */
 .title a{
@@ -75,4 +79,21 @@ list-style: none;}
 }
 .left .nav .child a{
     padding-left: 50px;
+}
+.right{
+    height: 100%;
+    background-color: pink;
+    padding-left: 180px;
+
+}
+.right .top {
+    height: 50px;
+    background-color: #3c8dbc;
+    line-height: 50px;
+    margin-bottom: 20px;
+}
+.right .top a{
+    color: #fff;
+    font-size: 16px;
+    padding: 0 20px;
 }

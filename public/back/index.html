@@ -27,7 +27,7 @@
                     <!-- a标签不能 嵌套a标签-->
                     <a class="now" href="user.html">
                     <i class="glyphicon glyphicon-user"></i> 用户管理</a>
-                    <div class="child">
+                    <div class="child" style="display:none;">
                         <a href="first.html">一级分类 </a>
                         <a href="first.html">二级分类 </a>
                     </div>
@@ -44,7 +44,23 @@
             </ul>
         </div>
  </div>
- <div class="right"></div>
+ <!-- 右边的盒子 -->
+ <div class="right">
+        <div class="top">
+            <a class="pull-left" href="javascript:; " ><span class="glyphicon glyphicon-align-justify "></span></a>
+            <a  class="pull-right" href="javascript:; " ><span class="glyphicon glyphicon-log-out  "></span></a>
+        </div>
+        <!-- 路径导航  组件 -->
+        <!-- container-fluid 左右有默认的15px  -->
+        <div class="container-fluid">
+            <ol class="breadcrumb">
+                <li><a href="#">管理系统</a></li>
+                <li class="active">首页</li>
+              </ol>
+              <!-- 图标区 -->
+        </div>
+
+ </div>
 
 <script src="./lib/jauery/jquery.js"></script>
 <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
