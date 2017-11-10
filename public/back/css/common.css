@@ -110,3 +110,9 @@ list-style: none;}
     height: 400px;
     width: 45%;
 }
+/* 表格 */
+/* 提升权重 */
+.table.table-bordered td{
+    text-align: center;
+    vertical-align: middle;
+}
