@@ -32,8 +32,13 @@ list-style: none;}
     height: 100%;
     background-color: #222d32;
     position: absolute;
+    left: 0;
     /* float: left; */
+    transition: all 1s;
 
+}
+.left.now{
+    left: -180px;
 }
 /* 子元素把父盒子张开 */
 .title a{
@@ -82,9 +87,11 @@ list-style: none;}
 }
 .right{
     height: 100%;
-    background-color: pink;
     padding-left: 180px;
-
+    transition: all 1s;
+}
+.right.now{
+    padding-left: 0px;
 }
 .right .top {
     height: 50px;
@@ -96,4 +103,10 @@ list-style: none;}
     color: #fff;
     font-size: 16px;
     padding: 0 20px;
+}
+/* picture */
+.picture-left,
+.picture-right{
+    height: 400px;
+    width: 45%;
 }
