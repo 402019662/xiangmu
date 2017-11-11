@@ -58,7 +58,7 @@
                 <li class="active">用户管理</li>
               </ol>
             <!-- 表格区域 -->
-            
+    <div class="lt_content">
             <table class="table table-bordered table-hover">
                 <thead>
                     <tr>
@@ -69,15 +69,7 @@
                         <td width="10%">操作</td>
                     </tr>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>sdas</td>
-                            <td>dasd</td>
-                            <td>正常</td>
-                            <td>
-                                <button class="btn btn-danger btn-sm">禁用</button>
-                            </td>
-                        </tr>
+                        <!-- 挖坑 -->
                     </tbody>
                 </thead>
             </table> 
@@ -86,7 +78,7 @@
                  <ul id="paginator"></ul>
             </div>          
         </div>
-       
+    </div>
 
  </div>
     <!-- 模态框 -->
@@ -105,24 +97,46 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-              <button type="button" class="btn btn-primary btn_confirm">确定</button>
+              <button type="button" class="btn btn-primary btn_confirm btn_edit">确定</button>
             </div>
           </div>
         </div>
 </div>
+<!-- 创建模板 -->
+<script type=text/html id='tel'>
+    <!-- i: -->
+    {{each rows v i}}
+    <tr>
+        <td>{{(page-1)*size+i+1}}</td>
+        <td>{{v.username}}</td>
+        <td>{{v.mobile}}</td>
+        <td>{{v.isDelete===1? '正常':'禁用'}}</td>
+        <td data-id="{{v.id}}">
+           {{if v.isDelete===1 }}
+            <button class="btn btn-danger btn-sm">正常</button>
+            {{/if}}
+            {{if v.isDelete===0 }}
+            <button class="btn btn-danger btn-sm">禁用</button>
+            {{/if}}
+        </td>
+    </tr>
+
+    {{/each}}
+</script>
 <script></script>
 <script src="./lib/jauery/jquery.js"></script>
 <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+<!-- 表单校正插件 -->
 <script src="./lib//bootstrap/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+<!-- 进度条插件 -->
 <script src="../nprogress/nprogress.js"></script>
+<!-- 图形插件 -->
 <script src="./lib/echarts/echarts.min.js"></script>
 <!-- 模板插件 -->
 <script src="./lib/artTemplate/template-web.js"></script>
 <!-- 分页插件 -->
 <script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
 <script src="./js/common.js"></script>
-<script src="./js/login.js"></script>
-<script src="./js/index.js"></script>
-
+<script src="./js/user.js"></script>
 </body>
 </html>
