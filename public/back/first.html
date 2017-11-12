@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用户管理</title>
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+     <link rel="stylesheet" href="../nprogress/nprogress.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./lib/bootstrap/bootstrap-validator/css/bootstrapValidator.css">
+   
+</head>
+<body>
+    <!-- 左边的父盒子 -->
+ <div class="left">
+        <div class="title">
+            <a href="index.html">程序员</a>
+        </div>
+        <div class="userName">
+            <img src="./img/default.png" alt="">
+            <p>超级管理员</p>
+        </div>
+        <div  class="nav">
+            <ul>
+                <li>
+                    <!-- a标签不能 嵌套a标签-->
+                    <a class="now" href="user.html">
+                    <i class="glyphicon glyphicon-user"></i> 用户管理</a>
+                  
+                </li>
+                <li>
+                        <a href="javascript:;">
+                        <i class="glyphicon glyphicon-list"></i> 分类管理</a>
+                        <div class="child" style="display:none;">
+                            <a  class="now" href="first.html">一级分类 </a>
+                            <a href="second.html">二级分类 </a>
+                        </div>
+                </li>
+                <li>
+                        <a href="product.html">
+                        <i class="glyphicon glyphicon-tags"></i> 商品管理</a>
+                 </li>    
+            </ul>
+        </div>
+ </div>
+ <!-- 右边的盒子 -->
+ <div class="right">
+        <div class="top">
+            <a class="pull-left btn_menu" href="javascript:; " ><span class="glyphicon glyphicon-align-justify "></span></a>
+            <a  class="pull-right btn-logout" href="javascript:; " ><span class="glyphicon glyphicon-log-out  "></span></a>
+        </div>
+        <!-- 路径导航  组件 -->
+        <!-- container-fluid 左右有默认的15px  -->
+        <div class="container-fluid">
+            <ol class="breadcrumb">
+                <li><a href="#">管理系统</a></li>
+                <li class="#">用户管理</li>
+                <li class="active">一级分类</li>
+              </ol>
+            <!-- 表格区域 -->
+    <div class="lt_content">
+        <button class="btn btn-default mb_20 btn_add">添加分类</button>
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <td width="20%">序号</td>
+                        <td width="80%">分类名称</td>
+                    </tr>
+                    <tbody>
+                        <!-- 挖坑 -->
+                    </tbody>
+                </thead>
+            </table> 
+            <!-- 分页插件中必选有ul 盒子 -->
+            <div class="text-right">
+                 <ul id="paginator"></ul>
+            </div>          
+        </div>
+    </div>
+
+ </div>
+    <!-- 模态框 -->
+<div class="modal fade" tabindex="-1" id="logoutModal">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" ><span>&times;</span></button>
+              <h4 class="modal-title">温馨提示</h4>
+            </div>
+            <div class="modal-body">
+              <p class="text-danger">
+                <span class="glyphicon glyphicon-info-sign"></span>
+                您确定要退出后台管理系统吗？
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+              <button type="button" class="btn btn-primary btn_confirm btn_edit">确定</button>
+            </div>
+          </div>
+        </div>
+</div>
+<div class="modal fade" tabindex="-1" id="addModal">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" ><span>&times;</span></button>
+          <h4 class="modal-title">添加分类</h4>
+        </div>
+        <div class="modal-body">
+          <form id="form">
+            <div class="form-group">
+              <input type="text" class="form-control" name="categoryName" placeholder="请输入一级分类">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" form="form" class="btn btn-default" data-dismiss="modal">取消</button>
+          <button type="submit" form="form" class="btn btn-primary btn_confirm">确定</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- 创建模板 -->
+<script type=text/html id='tel'>
+    <!-- i: -->
+    {{each rows v i}}
+    <tr>
+        <td>{{(page-1)*size+i+1}}</td>
+        <td>{{v.categoryName}}</td>
+  
+    </tr>
+
+    {{/each}}
+</script>
+<script></script>
+<script src="./lib/jauery/jquery.js"></script>
+<script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+<!-- 表单校正插件 -->
+<script src="./lib//bootstrap/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+<!-- 进度条插件 -->
+<script src="../nprogress/nprogress.js"></script>
+<!-- 图形插件 -->
+<script src="./lib/echarts/echarts.min.js"></script>
+<script src="./lib/bootstrap-paginator/bootstrap-paginator.js"></script>
+<!-- 模板插件 -->
+<script src="./lib/artTemplate/template-web.js"></script>
+<!-- 分页插件 -->
+<script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+<script src="./js/common.js"></script>
+<script src="./js/first.js"></script>
+</body>
+</html>
