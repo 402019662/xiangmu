@@ -116,3 +116,23 @@ list-style: none;}
     text-align: center;
     vertical-align: middle;
 }
+/* 把input 放在上传图片上 */
+.upload_box{
+    width: 82px;
+    height: 34px;
+    position: relative;
+}
+.upload_box:hover button{
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+
+}
+.upload_box input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
