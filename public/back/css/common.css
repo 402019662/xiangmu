@@ -136,3 +136,8 @@ list-style: none;}
     height: 100%;
     opacity: 0;
 }
+.img_wrap{
+    border: 1px solid #000;
+    padding: 2px;
+    display: inline-block;
+}
