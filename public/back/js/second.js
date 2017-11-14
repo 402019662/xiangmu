@@ -69,72 +69,72 @@ $(function(){
             // $form.data("bootstrapValidator").updateStatus("brandLogo", "VALID");
         }
     });
-    // // 表单校验
-    // var $form =$("form");
-    // $form.bootstrapValidator({
-    //     //设置不校验的内容，所有的都校验
-    //     excluded:[],
-    //     feedbackIcons: {
-    //       valid: 'glyphicon glyphicon-ok',
-    //       invalid: 'glyphicon glyphicon-remove',
-    //       validating: 'glyphicon glyphicon-refresh'
-    //     },
-    //     fields:{
-    //       categoryId:{
-    //         validators:{
-    //           notEmpty:{
-    //             message:"请选择一级分类"
-    //           }
-    //         }
-    //       },
-    //       brandName:{
-    //         validators:{
-    //           notEmpty:{
-    //             message:"请输入二级分类的名称"
-    //           }
-    //         }
-    //       },
-    //       brandLogo:{
-    //         validators:{
-    //           notEmpty:{
-    //             message:"请上传图片"
-    //           }
-    //         }
-    //       },
-    //     }
-    //   });
+    // 表单校验
+    var $form =$("form");
+    $form.bootstrapValidator({
+        //设置不校验的内容，所有的都校验
+        excluded:[],
+        feedbackIcons: {
+          valid: 'glyphicon glyphicon-ok',
+          invalid: 'glyphicon glyphicon-remove',
+          validating: 'glyphicon glyphicon-refresh'
+        },
+        fields:{
+          categoryId:{
+            validators:{
+              notEmpty:{
+                message:"请选择一级分类"
+              }
+            }
+          },
+          brandName:{
+            validators:{
+              notEmpty:{
+                message:"请输入二级分类的名称"
+              }
+            }
+          },
+          brandLogo:{
+            validators:{
+              notEmpty:{
+                message:"请上传图片"
+              }
+            }
+          },
+        }
+      });
     
     
-    //   //注册成功事件
+      //注册成功事件
     // 商品、图片添加到页面
-    //   $form.on("success.form.bv", function (e) {
-    //     e.preventDefault();
+      $form.on("success.form.bv", function (e) {
+        e.preventDefault();
     
-    //     $.ajax({
-    //       type:"post",
-    //       url:"/category/addSecondCategory",
-    //       data:$form.serialize(),
-    //       success:function (data) {
-    //         if(data.success){
+        $.ajax({
+          type:"post",
+          url:"/category/addSecondCategory",
+          data:$form.serialize(),
+          success:function (data) {
+            if(data.success){
     
-    //           //关闭模态框
-    //           $("#addModal").modal("hide");
+              //关闭模态框
+              $("#addModal").modal("hide");
     
-    //           //重新渲染第一页
-    //           currentPage = 1;
-    //           fenye();
+              //重新渲染第一页
+              currentPage = 1;
+              fenye();
     
-    //           //内容清掉
-    //           $form[0].reset();
-    //           $form.data("bootstrapValidator").resetForm();
-    //           $(".dropdown-text").text("请选择一级分类");
-    //           $(".img_box img").attr("src", "images/none.png");
-    //           $("#categoryId").val("");
-    //           $("#brandLogo").val("");
+              //内容清掉
+              $form[0].reset();
+              $form.data("bootstrapValidator").resetForm();
+              $(".dropdown-text").text("请选择一级分类");
+              $(".img_box img").attr("src", "images/none.png");
+              $("#categoryId").val("");
+              $("#brandLogo").val("");
     
-    //         }
-    //       }
-    //     });
+            }
+          }
+        });
     
-    //   });
+      });
 })
